@@ -10,20 +10,20 @@ const Nav = () => {
 
   const [providers, setProviders] = useState(null);
 
-  useEffect(() => {
-    (async () => {
-      const res = await getProviders();
-      setProviders(res);
-    })();
-  }, []);
+  // useEffect(() => {
+  //   (async () => {
+  //     const res = await getProviders();
+  //     setProviders(res);
+  //   })();
+  // }, []);
 
-  useEffect(() => {
-    const setProviders = async () => {
-      const response = await getProviders();
-      setProviders(response);
-    };
-    setProviders();
-  });
+  // useEffect(() => {
+  //   const setProviders = async () => {
+  //     const response = await getProviders();
+  //     setProviders(response);
+  //   };
+  //   setProviders();
+  // });
 
   return (
     <nav className=" flex-between w-full mb-16 pt-3">

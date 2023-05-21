@@ -19,7 +19,7 @@ const DarkLightTheme = () => {
     <div className="flex pl-8 ">
       {currentTheme === 'dark' ? (
         <button
-          className="bg-black hover:bg-black w-14 rounded-md border-grey border-1 p-2"
+          className="flex justify-center bg-black hover:bg-black w-14 rounded-md border-grey border-1 p-1"
           onClick={() => setTheme('light')}
         >
           <Image
@@ -31,7 +31,7 @@ const DarkLightTheme = () => {
         </button>
       ) : (
         <button
-          className="bg-black w-14 rounded-md border-grey border-1 p-2 hover:bg-gray-900"
+          className="flex justify-center bg-black w-14 rounded-md border-grey border-1 p-1 "
           onClick={() => setTheme('dark')}
         >
           <Image

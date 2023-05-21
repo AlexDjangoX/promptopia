@@ -20,17 +20,17 @@ const Nav = () => {
   }, []);
 
   return (
-    <nav className="flex-between w-full mb-16 pt-3">
+    <nav className=" flex-between w-full mb-16 pt-3">
       <div className="flex  ">
         <Link href="/" className="flex gap-2 flex-center">
           <Image
-            src="/assets/images/logo.svg"
+            src="/assets/images/coatOfArms.jpg"
             alt="logo"
             width={30}
             height={30}
             className="object-contain"
           />
-          <p className="logo_text">Promptopia</p>
+          <p className=" dark:text-white logo_text">Blog - Janusz</p>
         </Link>
 
         <DarkLightTheme />
@@ -43,7 +43,7 @@ const Nav = () => {
               Create Post
             </Link>
 
-            <button type="button" onClick={signOut} className="outline_btn">
+            <button type="button" onClick={signOut} className="black_btn">
               Sign Out
             </button>
 

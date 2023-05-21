@@ -3,7 +3,7 @@ import Nav from '@components/Nav';
 import Provider from '@components/Provider';
 
 export const metadata = {
-  title: 'Promptopia',
+  title: 'Polish Tutor Online',
   description: 'Discover & Share AI Prompts',
 };
 
@@ -15,7 +15,7 @@ const RootLayout = ({ children }) => (
           <div className="gradient" />
         </div>
 
-        <main className="app">
+        <main className=" dark:bg-slate-900 app">
           <Nav />
           {children}
         </main>

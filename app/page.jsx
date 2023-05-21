@@ -8,7 +8,6 @@ const Home = () => (
       Explore & Discover
       <br className="max-md:hidden" />
       <span className="orange_gradient text-center">
-        {' '}
         Polish language with Janusz
       </span>
     </h1>

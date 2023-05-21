@@ -5,16 +5,41 @@ import { useState, useEffect } from 'react';
 import PromptCard from './PromptCard';
 
 const PromptCardList = ({ allPosts, handleTagClick }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = allPosts.slice(indexOfFirstItem, indexOfLastItem);
+
   return (
-    <div className="mt-16 prompt_layout">
-      {allPosts.map((post) => (
-        <PromptCard
-          key={post._id}
-          post={post}
-          handleTagClick={handleTagClick}
-        />
-      ))}
-    </div>
+    <>
+      <div className="flex justify-between w-[220px] mt-12">
+        <button
+          className="px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white"
+          onClick={() => setCurrentPage((prevPage) => prevPage - 1)}
+          disabled={currentPage === 1}
+        >
+          Previous
+        </button>
+        <button
+          className="px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white"
+          onClick={() => setCurrentPage((prevPage) => prevPage + 1)}
+          disabled={currentPage === Math.ceil(allPosts.length / itemsPerPage)}
+        >
+          Next
+        </button>
+      </div>
+      <div className="mt-16 prompt_layout">
+        {currentItems.map((post) => (
+          <PromptCard
+            key={post._id}
+            post={post}
+            handleTagClick={handleTagClick}
+          />
+        ))}
+      </div>
+    </>
   );
 };
 

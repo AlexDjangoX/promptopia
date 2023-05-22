@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { useSession } from 'next-auth/react';
 import { usePathname, useRouter } from 'next/navigation';
 
+import PostDateTime from './PostDateTime';
+
 const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
   const { data: session } = useSession();
   const pathName = usePathname();
@@ -41,11 +43,12 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
 
           <div className="flex flex-col">
             <h3 className="font-satoshi font-semibold text-gray-900 dark:text-gray-500 ">
-              {post.creator.username}
+              {post.creator.username.split(' ')[0]}
             </h3>
             <p className="font-inter text-sm text-gray-500">
               {post.creator.email}
             </p>
+            <PostDateTime dateTimeString={post.dateCreated} />
           </div>
         </div>
 

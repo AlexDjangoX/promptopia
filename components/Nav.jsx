@@ -20,9 +20,9 @@ const Nav = () => {
   }, []);
 
   return (
-    <nav className=" flex-between w-full mb-16 pt-3">
+    <nav className="sticky top-0 flex-between w-full pt-8 pb-8 z-50 bg-white dark:bg-gray-800 ">
       <div className="flex  ">
-        <Link href="/" className="flex gap-2 flex-center">
+        <Link href="/" className="flex gap-2 flex-center pl-12 ">
           <Image
             src="/assets/images/coatOfArms.jpg"
             alt="logo"
@@ -47,7 +47,7 @@ const Nav = () => {
               Sign Out
             </button>
 
-            <Link href="/profile">
+            <Link href="/profile" className="pr-12">
               <Image
                 src={session?.user.image}
                 width={37}
@@ -79,7 +79,7 @@ const Nav = () => {
       {/* Mobile Navigation */}
       <div className="sm:hidden flex relative">
         {session?.user ? (
-          <div className="flex">
+          <div className="flex pr-12 ">
             <Image
               src={session?.user.image}
               width={37}

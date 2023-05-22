@@ -14,20 +14,23 @@ const PromptCardList = ({ allPosts, handleTagClick }) => {
 
   return (
     <>
-      <div className="flex justify-between w-[220px] mt-12">
+      <div className="w-full flex justify-around pt-4 ">
         <button
-          className="px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white"
+          className="w-34 px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white"
           onClick={() => setCurrentPage((prevPage) => prevPage - 1)}
           disabled={currentPage === 1}
         >
-          Previous
+          Previous Page
         </button>
+        <span>
+          Page {currentPage} of {Math.ceil(allPosts.length / 10)}
+        </span>
         <button
-          className="px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white"
+          className="w-34 px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white"
           onClick={() => setCurrentPage((prevPage) => prevPage + 1)}
           disabled={currentPage === Math.ceil(allPosts.length / itemsPerPage)}
         >
-          Next
+          Next Page
         </button>
       </div>
       <div className="mt-16 prompt_layout">

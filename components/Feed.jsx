@@ -97,17 +97,19 @@ const Feed = () => {
 
   return (
     <section className="feed">
-      <form className="relative w-full flex-center">
+      <form className="relative w-full flex-center text-gray-800">
         <input
           type="text"
-          placeholder="Search for a tag or a username"
+          placeholder="Search for a tag, user name or key word"
           value={searchText}
           onChange={handleSearchChange}
           required
           className="search_input peer"
         />
       </form>
-
+      {searchText && searchedResults.length === 0 ? (
+        <h1>There are no posts matching your search</h1>
+      ) : null}
       {searchText ? (
         <PromptCardList
           allPosts={searchedResults}
@@ -116,10 +118,6 @@ const Feed = () => {
       ) : (
         <PromptCardList allPosts={allPosts} handleTagClick={handleTagClick} />
       )}
-
-      {searchText && searchedResults.length === 0 ? (
-        <h1>There are no posts matching your search</h1>
-      ) : null}
     </section>
   );
 };

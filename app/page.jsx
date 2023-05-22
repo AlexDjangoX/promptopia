@@ -3,11 +3,12 @@
 import Feed from '@components/Feed.jsx';
 
 const Home = () => (
-  <section className="w-full flex-center flex-col">
+  <section className="w-[90%] flex-center flex-col">
     <h1 className="head_text text-center ">
       Explore & Discover
       <br className="max-md:hidden" />
       <span className="orange_gradient text-center">
+        {' '}
         Polish language with Janusz
       </span>
     </h1>

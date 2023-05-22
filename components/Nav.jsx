@@ -20,7 +20,7 @@ const Nav = () => {
   }, []);
 
   return (
-    <nav className="sticky top-0 flex-between w-full pt-8 pb-8 z-50 bg-white dark:bg-gray-800 ">
+    <nav className="sticky top-0 flex-between w-full pt-8 pb-8 z-50 bg-gradient-to-r from-orange-400 from-10% via-yellow-500 via-30% to-red-100 to-90%  dark:bg-gray-800 ">
       <div className="flex  ">
         <Link href="/" className="flex gap-2 flex-center pl-12 ">
           <Image
@@ -103,7 +103,7 @@ const Nav = () => {
                   className="dropdown_link"
                   onClick={() => setToggleDropdown(false)}
                 >
-                  Create Prompt
+                  Create Post
                 </Link>
                 <button
                   type="button"

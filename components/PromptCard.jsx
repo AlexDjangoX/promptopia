@@ -63,7 +63,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
         </div>
       </div>
 
-      <p className="my-4 font-satoshi text-sm text-gray-700 dark:text-gray-200 ">
+      <p className="whitespace-pre-wrap my-4 font-satoshi text-sm text-gray-700 dark:text-gray-200 ">
         {post.prompt}
       </p>
       <p

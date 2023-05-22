@@ -1,14 +1,24 @@
+'use client';
+
 import Link from 'next/link';
 
 const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
+  const maxChars = 250;
+
+  const handleInputChange = (e) => {
+    if (e.target.value.length <= maxChars) {
+      setPost({ ...post, prompt: e.target.value });
+    }
+  };
+
   return (
-    <section className="w-full max-w-full flex-start flex-col">
+    <section className="w-4/5 mx-auto flex-center flex-col justify-center ">
       <h1 className="head_text text-left">
         <span className="blue_gradient">{type} Post</span>
       </h1>
       <p className="desc text-left max-w-md">
-        {type} and share amazing prompts with the world, and let your
-        imagination run wild with any AI-powered platform
+        {type} and share your content about interesting aspects of Polish
+        language, and your journey.
       </p>
 
       <form
@@ -16,13 +26,15 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
         className="mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism"
       >
         <label>
-          <span className="font-satoshi font-semibold text-base text-gray-700">
-            Your AI Prompt
-          </span>
-
+          <div className="flex align-cente font-satoshi font-semibold text-base text-gray-700 dark:text-gray-200 ">
+            <span className="pr-6">Your post here</span>
+            <span className="font-normal">
+              {maxChars - post.prompt.length} (Characters remaining)
+            </span>
+          </div>
           <textarea
             value={post.prompt}
-            onChange={(e) => setPost({ ...post, prompt: e.target.value })}
+            onChange={handleInputChange}
             placeholder="Write your post here"
             required
             className="form_textarea "
@@ -30,12 +42,12 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
         </label>
 
         <label>
-          <span className="font-satoshi font-semibold text-base text-gray-700">
-            Field of Prompt{' '}
+          <div className="flex align-cente font-satoshi font-semibold text-base text-gray-700  dark:text-gray-200">
+            <span className="pr-6">Tag your topic</span>
             <span className="font-normal">
-              (#product, #webdevelopment, #idea, etc.)
+              (#aspect, #verbs, #introduce-yourself, etc.)
             </span>
-          </span>
+          </div>
           <input
             value={post.tag}
             onChange={(e) => setPost({ ...post, tag: e.target.value })}
@@ -47,7 +59,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
         </label>
 
         <div className="flex-end mx-3 mb-5 gap-4">
-          <Link href="/" className="text-gray-500 text-sm">
+          <Link href="/" className="text-gray-500 text-sm  dark:text-gray-200">
             Cancel
           </Link>
 
